@@ -54,13 +54,23 @@ switch ($type) {
     }
     break;
   case 'add_student':
-    print_r($_POST); die;
+    // print_r($_POST); die;
     $student_name = $_POST['student_name'];
     $father_name  = $_POST['father_name'];
     $standard     = $_POST['standard'];
     $address      = $_POST['address'];
     $gender       = $_POST['gender'];
 
+    
+      $insert_student = "INSERT INTO students (student_name, father_name,standard,address, gender) VALUES('$student_name','$father_name','$standard','$address','$gender')";
+      $stmt_insert_student = $conn->prepare($insert_student);
+      if($stmt_insert_student->execute()) {
+        $message = "Student added successfully !!!";
+        header("Location:http://localhost/projects_point_projects/student_management_system/index.php?success=".$message);
+      }else{
+        $message = "Couldn't add Student !!!";
+        header("Location:http://localhost/projects_point_projects/student_management_system/index.php?error=".$message);
+      }
 
     break;
 
