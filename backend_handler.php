@@ -73,7 +73,27 @@ switch ($type) {
       }
 
     break;
+  case 'update_student':
+    // print_r($_POST); die;
+    $id           = $_GET['id'];
+    $student_name = $_POST['student_name'];
+    $father_name  = $_POST['father_name'];
+    $standard     = $_POST['standard'];
+    $address      = $_POST['address'];
+    $gender       = $_POST['gender'];
 
+    
+      $update_student = "UPDATE students SET student_name='$student_name', father_name='$father_name',standard='$standard',address='$address', gender='$gender' WHERE student_id='$id'";
+      $stmt_update_student = $conn->prepare($update_student);
+      if($stmt_update_student->execute()) {
+        $message = "Student Updated successfully !!!";
+        header("Location:http://localhost/projects_point_projects/student_management_system/index.php?success=".$message);
+      }else{
+        $message = "Couldn't update Student !!!";
+        header("Location:http://localhost/projects_point_projects/student_management_system/index.php?error=".$message);
+      }
+
+    break;
   default:
     // code...
     break;

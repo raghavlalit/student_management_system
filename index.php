@@ -49,9 +49,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
               </tr>
           </thead>
       <tbody>
-      <?php foreach ($results as $key => $student) { ?>
+      <?php 
+      $i = 1;
+      foreach ($results as $key => $student) { ?>
         <tr>
-          <td>1</td>
+          <td><?php echo $i; ?></td>
           <td><?php echo $student['student_id']; ?></td>
           <td><?php echo $student['student_name']; ?></td>
           <td><?php echo $student['standard']; ?></td>
@@ -60,11 +62,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
               <span class="badge badge-success">Success</span>
           </td>
           <td class="text-center">
-              <a class="btn btn-info btn-sm" href="3"><i class="fas fa-pencil-alt"></i>Edit</a>
-              <a class="btn btn-danger btn-sm" href="3"><i class="fas fa-trash"></i>Delete</a>
+              <a class="btn btn-info btn-sm" href="/projects_point_projects/student_management_system/edit_student.php?id=<?php echo $student['student_id']; ?>"><i class="fas fa-pencil-alt"></i>Edit</a>
+              <a class="btn btn-danger btn-sm" href="/projects_point_projects/student_management_system/delete_student.php?id=<?php echo $student['student_id']; ?>"><i class="fas fa-trash"></i>Delete</a>
           </td>
         </tr>
-      <?php }?>
+      <?php $i++; }?>
       </tbody>
     </table>
   </div>
