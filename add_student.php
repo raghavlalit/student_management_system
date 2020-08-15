@@ -40,15 +40,30 @@ include('header.php');
 
                   <div class="form-group">
                     <label for="exampleInputText">Standard</label>
-                    <input type="text" name="standard" class="form-control" id="exampleInputText" placeholder="Standard">
+                    <select type="text" name="standard" class="form-control" id="exampleInputText" placeholder="Standard">
+                      <option>Select</option>
+                      <option>6th</option>
+                      <option>7th</option>
+                      <option>8th</option>
+                      <option>9th</option>
+                      <option>10th</option>
+                      <option>11th</option>
+                      <option>12th</option>
+                    </select>
+                    <!-- <input type="text" name="standard" class="form-control" id="exampleInputText" placeholder="Standard"> -->
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputText">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputText" placeholder="Address">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" placeholder="Address" rows="3"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputText">Gender</label>
-                    <input type="text" name="gender" class="form-control" id="exampleInputText" placeholder="Gender">
+                    <select type="select" name="gender" class="form-control" id="exampleInputText" placeholder="Select Gender">
+                      <option>Select</option>
+                      <option>male</option>
+                      <option>female</option>
+                    </select>
+                    <!-- <input type="text" name="gender" class="form-control" id="exampleInputText" placeholder="Gender"> -->
                   </div>
                   
                 </div>

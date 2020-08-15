@@ -43,8 +43,8 @@ $student = $query->fetch(PDO::FETCH_ASSOC);
                     <input type="text" name="standard" value="<?php echo $student['standard']; ?>" class="form-control" id="exampleInputText" placeholder="Standard">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputText">Address</label>
-                    <input type="text" name="address" value="<?php echo $student['address']; ?>" class="form-control" id="exampleInputText" placeholder="Address">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"><?php echo $student['address']; ?></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputText">Gender</label>

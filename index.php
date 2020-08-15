@@ -59,7 +59,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
           <td><?php echo $student['standard']; ?></td>
           <td><?php echo $student['address']; ?></td>
           <td class="text-center">
-              <span class="badge badge-success">Success</span>
+              <span class="badge badge-success">Active</span>
           </td>
           <td class="text-center">
               <a class="btn btn-info btn-sm" href="/projects_point_projects/student_management_system/edit_student.php?id=<?php echo $student['student_id']; ?>"><i class="fas fa-pencil-alt"></i>Edit</a>

@@ -54,7 +54,9 @@ switch ($type) {
     }
     break;
   case 'add_student':
-    // print_r($_POST); die;
+    $nameArr = explode(" ", $_POST['student_name']);
+    $firstname = $nameArr[0];
+    $student_id   = time()."-".$firstname;
     $student_name = $_POST['student_name'];
     $father_name  = $_POST['father_name'];
     $standard     = $_POST['standard'];
@@ -62,7 +64,7 @@ switch ($type) {
     $gender       = $_POST['gender'];
 
     
-      $insert_student = "INSERT INTO students (student_name, father_name,standard,address, gender) VALUES('$student_name','$father_name','$standard','$address','$gender')";
+      $insert_student = "INSERT INTO students (student_id,student_name, father_name,standard,address, gender) VALUES('$student_id','$student_name','$father_name','$standard','$address','$gender')";
       $stmt_insert_student = $conn->prepare($insert_student);
       if($stmt_insert_student->execute()) {
         $message = "Student added successfully !!!";
@@ -74,7 +76,6 @@ switch ($type) {
 
     break;
   case 'update_student':
-    // print_r($_POST); die;
     $id           = $_GET['id'];
     $student_name = $_POST['student_name'];
     $father_name  = $_POST['father_name'];
