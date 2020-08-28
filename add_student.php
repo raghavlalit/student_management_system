@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION['student_management_system'])){
+  header("Location:http://localhost/projects_point_projects/student_management_system/login.php");
+  die;
+}
 include('header.php');
 
 // $projects_category = "SELECT * FROM project_categories";

@@ -64,7 +64,7 @@ switch ($type) {
     $gender       = $_POST['gender'];
 
     
-      $insert_student = "INSERT INTO students (student_id,student_name, father_name,standard,address, gender) VALUES('$student_id','$student_name','$father_name','$standard','$address','$gender')";
+      $insert_student = "INSERT INTO students (student_id,student_name, father_name,standard,address, gender, date) VALUES('$student_id','$student_name','$father_name','$standard','$address','$gender', now())";
       $stmt_insert_student = $conn->prepare($insert_student);
       if($stmt_insert_student->execute()) {
         $message = "Student added successfully !!!";

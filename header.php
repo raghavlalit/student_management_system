@@ -53,6 +53,7 @@ $username = isset($_SESSION['student_management_system']['name']) ? $_SESSION['s
 </nav>
 <div class="container-fluid">
     <div class="row">
+    	<?php if(isset($_SESSION['student_management_system'])){ ?>
         <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
@@ -78,4 +79,5 @@ $username = isset($_SESSION['student_management_system']['name']) ? $_SESSION['s
             </ul>
           </div>
         </nav>
+    <?php }?>
         

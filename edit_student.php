@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION['student_management_system'])){
+  header("Location:http://localhost/projects_point_projects/student_management_system/login.php");
+  die;
+}
 include('header.php');
 $id = $_GET['id'];
 $student_edit = "SELECT * FROM students WHERE student_id = '$id'";
